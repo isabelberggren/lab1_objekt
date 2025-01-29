@@ -70,9 +70,7 @@ public abstract class Cars implements Movable{
     public void gas(double amount){
         if (0 <= amount && amount <= 1) {
             incrementSpeed(amount);
-
         }
-
     }
 
     public void brake(double amount){
