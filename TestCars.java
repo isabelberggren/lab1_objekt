@@ -20,4 +20,30 @@ public class TestCars {
         c.startEngine();
         assertTrue(0.1 == c.getCurrentSpeed()) ;
     }
+
+    @Test
+    public void testGas(){
+        Cars c = new Volvo240();
+        double initialSpeed = c.getCurrentSpeed();
+        c.gas(2);
+        assertTrue(c.getCurrentSpeed() >= initialSpeed);
+    }
+
+    @Test
+    public void testBrake(){
+        Cars c = new Volvo240();
+        double initialSpeed = c.getCurrentSpeed();
+        c.brake(2);
+        assertTrue(c.getCurrentSpeed() <= initialSpeed);
+    }
+
+    @Test
+    public void testCurrentSpeed(){
+        Cars c = new Volvo240();
+        c.getCurrentSpeed();
+        assertTrue(0 <= c.getCurrentSpeed() && c.getCurrentSpeed() <= c.getEnginePower());
+    }
+
+
+
 }

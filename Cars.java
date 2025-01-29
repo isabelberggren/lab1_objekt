@@ -7,8 +7,9 @@ public abstract class Cars implements Movable{
     protected Color color; // Color of the car
     protected String modelName; // The car model name
     public double x = 0;
-    public double y = 0; // Ändralic sen om det ska från pub
+    public double y = 0; // Ändra sen om det ska från pub
     public double currDirection = 0;
+
 
     public int getNrDoors(){
         return nrDoors;
@@ -52,6 +53,32 @@ public abstract class Cars implements Movable{
 
     public void turnRight(){
         currDirection = (currDirection+90)%360;
+    }
+
+    public void incrementSpeed(double amount){
+        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower);
+    }
+
+    public void decrementSpeed(double amount){
+        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
+    }
+
+    protected double speedFactor() {
+        return 1.0;
+    }
+
+    public void gas(double amount){
+        if (0 <= amount && amount <= 1) {
+            incrementSpeed(amount);
+
+        }
+
+    }
+
+    public void brake(double amount){
+        if (0 <= amount && amount <= 1) {
+            decrementSpeed(amount);
+        }
     }
 
 }
