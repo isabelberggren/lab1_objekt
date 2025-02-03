@@ -7,9 +7,15 @@ public class Scania extends Vehicle{
         color = Color.orange;
         enginePower = 1500;
         modelName = "Scania";
-        ScaniaAngle = 0;
+        int ScaniaAngle = 0;
         stopEngine();
         }
+
+
+        public void getAngle{
+
+    }
+
 
 
 
