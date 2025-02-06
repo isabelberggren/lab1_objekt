@@ -41,16 +41,29 @@ public class TestVehicle {
     }
 
     @Test
-    public void testCurrentSpeed(){
+    public void testCurrentSpeed() {
         Vehicle c = new Volvo240();
         c.getCurrentSpeed();
         for (int i = 0; i < 100; i++) {
             c.gas(1);
             assertTrue(0 <= c.getCurrentSpeed() && c.getCurrentSpeed() <= c.getEnginePower());
         }
-
     }
 
+    @Test
+    public void testEngineAngleWhenAngleEqualsZero() {
+        Scania truck = new Scania();
+        for (int i = 0; i < 71; i++) {
+            if (i == 0) {
+                truck.setAngle(i);
+                truck.startEngine();
 
-
-}
+                assertEquals(0.1, truck.getCurrentSpeed(), 0.01);
+            } else {
+                int finalI = i;
+                assertThrows(IllegalArgumentException.class, () -> {
+                            truck.setAngle(finalI);
+                        });
+            }
+        }
+    }}
