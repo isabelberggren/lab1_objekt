@@ -1,25 +1,34 @@
 import java.awt.*;
 
-public class Truck extends Vehicle {
+public class Truck extends Vehicle { 
+    
+    protected int angle;
+    protected int position;
 
-    public Truck() {
-        nrDoors = 2;
-        color = Color.orange;
-        enginePower = 1500;
-        modelName = "Car transporter";
-        angle = 0;
-        position = 0;
-        stopEngine();
-    }
 
-    public void englishboy() {
-        if (getCurrentSpeed() == 0) {
+    public int getAngle(){return angle;}
 
+    public void setAngle(int ang) {
+        double speed = getCurrentSpeed();
+        if (speed == 0) {
+            if (angle >= 0 && 70 >= angle) {
+                angle = ang;
+            } else {
+                throw new IllegalArgumentException("Angle should be between 0 and 70 degrees");
+            }
+        } else {
+            throw new IllegalArgumentException("Speed must be 0 to change angle");
         }
-
-        else {throw new IllegalArgumentException("The vehicle must stand still your stupied")
     }
-}
+    @Override
+    public void startEngine(){
+        int truckBedAngle = getAngle();
+
+        if (truckBedAngle == 0) {currentSpeed = 0.1;}
+
+        else{throw new IllegalArgumentException("Angle must be 0 to start the engine");}
+    }
 
 }
+
 
