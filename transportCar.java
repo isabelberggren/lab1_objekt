@@ -3,7 +3,7 @@
 import java.awt.*;
 import java.util.ArrayList;
 
-public class transportCar extends Truck{
+public class transportCar extends Truck implements Load{
     private final int maxLoadedCars = 6;
     private int carDistance;
     private ArrayList <Vehicle> loadedCars = new ArrayList<Vehicle>(9);
