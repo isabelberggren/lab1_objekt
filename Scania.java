@@ -10,6 +10,7 @@ public class Scania extends Truck{
         enginePower = 1500;
         modelName = "Scania";
         angle = 0;
+        size = 10;
         stopEngine();
         }
 

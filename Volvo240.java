@@ -11,6 +11,7 @@ public class Volvo240 extends Vehicle{
         enginePower = 100;
         modelName = "Volvo240";
         stopEngine();
+        size = 4.87;
     }
     
 

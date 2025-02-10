@@ -11,7 +11,9 @@ public class Saab95 extends Vehicle {
         enginePower = 125;
 	    turboOn = false;
         modelName = "Saab95";
+        size = 4.30;
         stopEngine();
+
     }
 
 

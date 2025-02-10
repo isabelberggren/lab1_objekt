@@ -9,7 +9,7 @@ public abstract class Vehicle implements Movable {
     protected double x = 0;
     protected double y = 0; // Ändra sen om det ska från pub
     protected double currDirection = 0;
-
+    protected static double size;
 
     public int getNrDoors(){
         return nrDoors;
