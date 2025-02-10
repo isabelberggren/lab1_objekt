@@ -1,9 +1,8 @@
 import java.awt.*;
 
-public class Truck extends Vehicle { 
-    
+public abstract class Truck extends Vehicle {
+
     protected int angle;
-    protected int position;
 
 
     public int getAngle(){return angle;}
@@ -20,6 +19,29 @@ public class Truck extends Vehicle {
             throw new IllegalArgumentException("Speed must be 0 to change angle");
         }
     }
+
+    public void raise(int degrees){
+        int ang = getAngle();
+        int newang = ang + degrees;
+        if ( newang > 70){
+            throw new IllegalArgumentException("To high raise");}
+
+        setAngle(newang);
+
+        }
+
+    public void lower(int degrees){
+        int ang = getAngle();
+        int newang = ang - degrees;
+        if ( newang < 0){
+            throw new IllegalArgumentException("To high lowering");}
+
+        setAngle(newang);
+
+
+
+    }
+
     @Override
     public void startEngine(){
         int truckBedAngle = getAngle();
@@ -27,6 +49,9 @@ public class Truck extends Vehicle {
         if (truckBedAngle == 0) {currentSpeed = 0.1;}
 
         else{throw new IllegalArgumentException("Angle must be 0 to start the engine");}
+
+
+
     }
 
 }

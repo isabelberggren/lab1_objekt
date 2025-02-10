@@ -13,7 +13,6 @@ public class Scania extends Truck{
         stopEngine();
         }
 
-
 }
 
 
