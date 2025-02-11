@@ -4,10 +4,9 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class transportCar<T extends PersonalCar> extends Truck{
-    private final int maxLoadedCars = 6;
-    private int carDistance;
-    private ArrayList <T> loadedCars = new ArrayList<T>(9);
-    private int maxCapacity = 9;
+    public int carDistance;
+    public ArrayList <T> loadedCars = new ArrayList<T>(9);
+    public final int maxCapacity = 9;
 
 
     public transportCar() {
@@ -19,6 +18,7 @@ public class transportCar<T extends PersonalCar> extends Truck{
         size = 20;
         
     }
+
 
     @Override   //om du vill höja den så blir den automatiskt stängd
     public void raise(int degrees) {
@@ -33,27 +33,33 @@ public class transportCar<T extends PersonalCar> extends Truck{
         setAngle(degrees);
     }
 
-        //bilar kan endast lastas om rampen är nere och befinner sig rimligt nära transporten OCJ EJ ÄR EN TRASNPORTBIL
 
     public void loadCar(T car){
-            if (angle == 0 && getCurrentSpeed() == 0 && carDistance <= 1 && car.size < 6 && loadedCars.size() < maxCapacity) {
+            if (angle == 0 && getCurrentSpeed() == 0 && carDistance <= 1 && car.getSize() < 6 && loadedCars.size() < maxCapacity) {
+
                 loadedCars.add(car);
                 carDistance = 0;
-                car.x = x;
-                car.y = y;
+                x = car.getX();
+                y = car.getY();
             }
             else {
-                throw new IllegalArgumentException("The ramp needs to be down!");
+                throw new IllegalArgumentException("Something is wrong!");
             }
         }
 
-        public void deloadCar (T car) {
-            if (getAngle() == 0 && carDistance <= 1 && getCurrentSpeed() == 0) {
-                car = loadedCars.removeLast();
-                carDistance = 1;
+    public void deloadCar () {
+        if (getAngle() == 0 && carDistance <= 1 && getCurrentSpeed() == 0) {
+            loadedCars.removeLast();
+            carDistance = 1;
 
-            } else {
-                throw new IllegalArgumentException("The ramp needs to be down!");
-            }
+        } else {
+            throw new IllegalArgumentException("Something is wrong!");
         }
+    }
+    public void setCarDistance(){
+
+    }
+
+
+
     }

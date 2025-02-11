@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Garage<T extends Vehicle> {
     private int maxNmr;
-    public List<T> loadedVehicles = new ArrayList<T>(maxNmr);      //bilar i garaget
+    public List<T> loadedVehicles = new ArrayList<T>();      //bilar i garaget
 
     public void setMaxNmr(int max) {
         maxNmr = max;
@@ -14,7 +14,7 @@ public class Garage<T extends Vehicle> {
     }
 
     public void loadVehicle(T car) {
-        if (loadedVehicles.size() >= maxNmr) {
+        if (loadedVehicles.size() == maxNmr) {
             throw new ArrayStoreException("Already full garage");
 
         } else {

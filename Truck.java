@@ -24,7 +24,7 @@ public abstract class Truck extends Vehicle {
         int ang = getAngle();
         int newang = ang + degrees;
         if ( newang > 70){
-            throw new IllegalArgumentException("To high raise");}
+            throw new IllegalArgumentException("Too high raise");}
 
         setAngle(newang);
 
@@ -34,7 +34,7 @@ public abstract class Truck extends Vehicle {
         int ang = getAngle();
         int newang = ang - degrees;
         if ( newang < 0){
-            throw new IllegalArgumentException("To high lowering");}
+            throw new IllegalArgumentException("Too high lowering");}
 
         setAngle(newang);
 

@@ -13,7 +13,6 @@ public class Volvo240 extends Vehicle implements PersonalCar{
         stopEngine();
         size = 4.87;
     }
-    
 
     @Override
     protected double speedFactor(){

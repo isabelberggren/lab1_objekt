@@ -11,6 +11,11 @@ public abstract class Vehicle implements Movable {
     protected double currDirection = 0;
     protected static double size;
 
+    public double getSize(){return size;}
+    public double getX(){return x;}
+    public double getY(){return y;}
+    protected void setX(double xCoord){x = xCoord;}
+    protected void sety(double yCoord){y = yCoord;}
     public int getNrDoors(){
         return nrDoors;
     }

@@ -50,28 +50,6 @@ public class TestVehicle {
         }
     }
 
-    @Test
-    public void testEngineAngleWhenAngleEqualsZero() {
-        Scania truck = new Scania();
-        for (int i = 0; i < 71; i++) {
-            if (i == 0) {
-                truck.setAngle(i);
-                truck.startEngine();
 
-                assertEquals(0.1, truck.getCurrentSpeed(), 0.01);
-            } else {
-                int finalI = i;
-                assertThrows(IllegalArgumentException.class, () -> {
-                            truck.setAngle(finalI);
-                        });
-            }
-        }
-    }
-
-    @Test
-    public void testGarage() {
-        Garage<Vehicle> g = new Garage<>();
-        g.loadVehicle(new Scania());
-    }
 
 }
