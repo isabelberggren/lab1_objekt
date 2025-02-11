@@ -66,4 +66,12 @@ public class TestVehicle {
                         });
             }
         }
-    }}
+    }
+
+    @Test
+    public void testGarage() {
+        Garage<Vehicle> g = new Garage<>();
+        g.loadVehicle(new Scania());
+    }
+
+}
