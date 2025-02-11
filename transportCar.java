@@ -3,10 +3,10 @@
 import java.awt.*;
 import java.util.ArrayList;
 
-public class transportCar extends Truck{
+public class transportCar<T extends PersonalCar> extends Truck{
     private final int maxLoadedCars = 6;
     private int carDistance;
-    private ArrayList <Vehicle> loadedCars = new ArrayList<Vehicle>(9);
+    private ArrayList <T> loadedCars = new ArrayList<T>(9);
     private int maxCapacity = 9;
 
 
@@ -35,8 +35,8 @@ public class transportCar extends Truck{
 
         //bilar kan endast lastas om rampen är nere och befinner sig rimligt nära transporten OCJ EJ ÄR EN TRASNPORTBIL
 
-    public void loadCar(Vehicle car){
-            if (angle == 0 && getCurrentSpeed() == 0 && carDistance <= 1 && Vehicle.size < 6 && loadedCars.size() < maxCapacity) {
+    public void loadCar(T car){
+            if (angle == 0 && getCurrentSpeed() == 0 && carDistance <= 1 && car.size < 6 && loadedCars.size() < maxCapacity) {
                 loadedCars.add(car);
                 carDistance = 0;
                 car.x = x;
@@ -47,9 +47,9 @@ public class transportCar extends Truck{
             }
         }
 
-        public void deloadCar () {
+        public void deloadCar (T car) {
             if (getAngle() == 0 && carDistance <= 1 && getCurrentSpeed() == 0) {
-                Vehicle car = loadedCars.removeLast();
+                car = loadedCars.removeLast();
                 carDistance = 1;
 
             } else {
