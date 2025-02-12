@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Garage<T extends Vehicle> {
     private int maxNmr;
-    public List<T> loadedVehicles = new ArrayList<T>();      //bilar i garaget
+    private List<T> loadedVehicles = new ArrayList<T>();      //bilar i garaget
 
     public void setMaxNmr(int max) {
         maxNmr = max;

@@ -19,5 +19,19 @@ public class Volvo240 extends Vehicle implements PersonalCar{
         return enginePower * 0.01 * trimFactor;
     }
 
+    @Override
+    public void setX(double xCoord) {
+        super.setX(xCoord);
+    }
+
+    @Override
+    public void setY(double yCoord) {
+        super.sety(yCoord);
+    }
+
+    @Override
+    public double getX() {
+        return super.getX();
+    }
 
 }

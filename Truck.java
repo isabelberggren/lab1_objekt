@@ -2,12 +2,12 @@ import java.awt.*;
 
 public abstract class Truck extends Vehicle {
 
-    protected int angle;
+    protected static int angle;
 
 
-    public int getAngle(){return angle;}
+    protected static int getAngle(){return angle;}
 
-    public void setAngle(int ang) {
+    public static void setAngle(int ang) {
         double speed = getCurrentSpeed();
         if (speed == 0) {
             if (angle >= 0 && 70 >= angle) {
@@ -21,25 +21,11 @@ public abstract class Truck extends Vehicle {
     }
 
     public void raise(int degrees){
-        int ang = getAngle();
-        int newang = ang + degrees;
-        if ( newang > 70){
-            throw new IllegalArgumentException("Too high raise");}
-
-        setAngle(newang);
-
+        HelpRaiseLower.Raise(degrees);
         }
 
     public void lower(int degrees){
-        int ang = getAngle();
-        int newang = ang - degrees;
-        if ( newang < 0){
-            throw new IllegalArgumentException("Too high lowering");}
-
-        setAngle(newang);
-
-
-
+        HelpRaiseLower.Lower(degrees);
     }
 
     @Override

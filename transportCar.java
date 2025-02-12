@@ -3,10 +3,9 @@
 import java.awt.*;
 import java.util.ArrayList;
 
-public class transportCar<T extends PersonalCar> extends Truck{
-    public int carDistance;
-    public ArrayList <T> loadedCars = new ArrayList<T>(9);
-    public final int maxCapacity = 9;
+public class transportCar<T extends PersonalCar> extends Truck {
+    protected int carDistance;
+    private final ArrayList <T> loadedCars = new ArrayList<T>(9);
 
 
     public transportCar() {
@@ -16,38 +15,32 @@ public class transportCar<T extends PersonalCar> extends Truck{
         modelName = "Car transporter";
         double angle = 70;
         size = 20;
-        
     }
 
-
-    @Override   //om du vill höja den så blir den automatiskt stängd
-    public void raise(int degrees) {
-        degrees = 70;
-        setAngle(degrees);
+    public void open() {
+        HelpRaiseLower.Raise(70);
 
     }
-
-    @Override   //Om du vill sänka den så blir den automatiskt 0
-    public void lower(int degrees) {
-        degrees = 0;
-        setAngle(degrees);
+    //Om du vill sänka den så blir den automatiskt 0
+    public void close() {
+        HelpRaiseLower.Lower(0);
     }
 
 
     public void loadCar(T car){
-            if (angle == 0 && getCurrentSpeed() == 0 && carDistance <= 1 && car.getSize() < 6 && loadedCars.size() < maxCapacity) {
+        int maxCapacity = 9;
+        if (angle == 0 && getCurrentSpeed() == 0 && carDistance <= 1 && car.getSize() < 6 && loadedCars.size() < maxCapacity) {
 
                 loadedCars.add(car);
                 carDistance = 0;
-                x = car.getX();
-                y = car.getY();
+
             }
             else {
                 throw new IllegalArgumentException("Something is wrong!");
             }
         }
 
-    public void deloadCar () {
+    public void deloadCar(){
         if (getAngle() == 0 && carDistance <= 1 && getCurrentSpeed() == 0) {
             loadedCars.removeLast();
             carDistance = 1;
@@ -56,10 +49,18 @@ public class transportCar<T extends PersonalCar> extends Truck{
             throw new IllegalArgumentException("Something is wrong!");
         }
     }
-    public void setCarDistance(){
 
+    @Override
+    public void move(){
+        if (currDirection == 0) y += currentSpeed;
+        else if (currDirection == 180) y -= currentSpeed;
+        else if (currDirection == 90) x += currentSpeed;
+        else if (currDirection == 270) x -= currentSpeed;
+        for (T car : loadedCars ){
+            double y =  getY();
+            double x = getX();
+            car.setY(y);
+            car.setX(x);
+        }
     }
-
-
-
     }

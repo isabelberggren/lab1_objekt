@@ -2,8 +2,6 @@ import java.awt.*;
 
 public class Scania extends Truck{
 
-    private int angle;
-
     public Scania(){
         nrDoors = 2;
         color = Color.orange;
