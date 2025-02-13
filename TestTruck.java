@@ -11,7 +11,7 @@ public class TestTruck {
         Scania truck = new Scania();
         for (int i = 0; i < 71; i++) {
             if (i == 0) {
-                truck.setAngle(i);
+                truck.raise(i);
                 truck.startEngine();
 
                 assertEquals(0.1, truck.getCurrentSpeed(), 0.01);

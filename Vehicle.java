@@ -23,7 +23,7 @@ public abstract class Vehicle implements Movable {
         return enginePower;
     }
 
-    public static double getCurrentSpeed(){
+    public double getCurrentSpeed(){
         return currentSpeed;
     }
 

@@ -1,36 +1,26 @@
-import java.awt.*;
-
 public abstract class Truck extends Vehicle {
 
-    protected static int angle;
+    private TruckBed bed;
 
+    Truck(TruckBed bed) {
+        this.bed = bed;
+    }
 
-    protected static int getAngle(){return angle;}
-
-    public static void setAngle(int ang) {
-        double speed = getCurrentSpeed();
-        if (speed == 0) {
-            if (angle >= 0 && 70 >= angle) {
-                angle = ang;
-            } else {
-                throw new IllegalArgumentException("Angle should be between 0 and 70 degrees");
-            }
-        } else {
-            throw new IllegalArgumentException("Speed must be 0 to change angle");
-        }
+    public double getAngle() {
+        return bed.getAngle();
     }
 
     public void raise(int degrees){
-        HelpRaiseLower.Raise(degrees);
-        }
+        bed.Raise(degrees, getCurrentSpeed());
+    }
 
     public void lower(int degrees){
-        HelpRaiseLower.Lower(degrees);
+        bed.Lower(degrees, getCurrentSpeed());
     }
 
     @Override
     public void startEngine(){
-        int truckBedAngle = getAngle();
+        int truckBedAngle = bed.getAngle();
 
         if (truckBedAngle == 0) {currentSpeed = 0.1;}
 
