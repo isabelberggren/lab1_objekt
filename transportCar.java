@@ -17,6 +17,10 @@ public class transportCar<T extends PersonalCar> extends Truck {
         size = 20;
     }
 
+    public ArrayList<T> getLoadedCars(){return loadedCars;}
+
+    public int getLoaded(){return loadedCars.size();}
+
     public void open() {
         this.raise(70);
 

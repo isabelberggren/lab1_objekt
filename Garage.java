@@ -22,6 +22,8 @@ public class Garage<T extends Vehicle> {
         }
     }
 
+    public int getGarageLoaded(){return loadedVehicles.size();}
+
     public T deloadVehicle (int index) {
         T delodedVechical = null;
         if(index != 0 && index < loadedVehicles.size()){

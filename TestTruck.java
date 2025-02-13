@@ -18,7 +18,7 @@ public class TestTruck {
             } else {
                 int finalI = i;
                 assertThrows(IllegalArgumentException.class, () -> {
-                    truck.setAngle(finalI);
+                    truck.raise(finalI);
                 });
             }
         }
@@ -28,11 +28,11 @@ public class TestTruck {
     public void testDeloadCar(){
         transportCar<Volvo240> truck = new transportCar<>();
         truck.loadCar(new Volvo240());
-        truck.setAngle(0);
-        truck.currentSpeed = 0;
+        truck.raise(0);
+        truck.setCurrentspeed(0);
         truck.carDistance = 1;
         truck.deloadCar();
-        assertEquals(0, truck.loadedCars.size());
+        assertEquals(0, truck.getLoaded());
 
     }
 

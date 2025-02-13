@@ -22,7 +22,7 @@ public abstract class Truck extends Vehicle {
     public void startEngine(){
         int truckBedAngle = bed.getAngle();
 
-        if (truckBedAngle == 0) {currentSpeed = 0.1;}
+        if (truckBedAngle == 0) {setCurrentspeed(0.1);}
 
         else{throw new IllegalArgumentException("Angle must be 0 to start the engine");}
 
