@@ -1,3 +1,4 @@
+package labb1_objekt;
 import java.awt.*;
 
 public abstract class Vehicle implements Movable {
@@ -54,7 +55,7 @@ public abstract class Vehicle implements Movable {
     }
 
     public void turnLeft(){
-        currDirection = (currDirection-90)%360;
+        currDirection = (currDirection+270)%360;
     }
 
 

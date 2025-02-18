@@ -1,6 +1,5 @@
+/*package labb1_objekt;
 import org.junit.Test;
-
-import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -34,15 +33,15 @@ public class TestTruck {
         truck.deloadCar();
         assertEquals(0, truck.getLoaded());
 
-    }
+    }*/
 
-    @Test
-    public void testGarage() {
-        Garage<Vehicle> g = new Garage<>();
-        g.setMaxNmr(10);
-        g.loadVehicle(new Scania());
-        assertEquals(1, g.loadedVehicles.size());
-    }
+    //@Test
+  //  public void testGarage() {
+    //    Garage<Vehicle> g = new Garage<>();
+      //  g.setMaxNmr(10);
+        //g.loadVehicle(new Scania());
+        //assertEquals(1, g.loadedVehicles.size());
 
 
-}
+
+

@@ -1,3 +1,4 @@
+package labb1_objekt;
 public abstract class Truck extends Vehicle {
 
     private TruckBed bed;

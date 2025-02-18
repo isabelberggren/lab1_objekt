@@ -1,5 +1,5 @@
 
-
+package labb1_objekt;
 import java.awt.*;
 import java.util.ArrayList;
 

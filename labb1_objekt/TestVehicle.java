@@ -1,3 +1,4 @@
+package labb1_objekt;
 import org.junit.Test;
 
 import java.awt.*;

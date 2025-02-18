@@ -1,3 +1,4 @@
+package labb1_objekt;
 import java.awt.*;
 
 public class Scania extends Truck{
@@ -5,6 +6,8 @@ public class Scania extends Truck{
     private TruckBed bed;
 
     public Scania(){
+        super(new TruckBed());
+
         nrDoors = 2;
         color = Color.orange;
         enginePower = 1500;

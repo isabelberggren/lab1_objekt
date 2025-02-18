@@ -1,3 +1,4 @@
+package labb1_objekt;
 import java.awt.*;
 
 public class Volvo240 extends Vehicle implements PersonalCar{

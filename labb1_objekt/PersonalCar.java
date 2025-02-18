@@ -1,3 +1,4 @@
+package labb1_objekt;
 public interface PersonalCar {
     double getSize();
     double getX();

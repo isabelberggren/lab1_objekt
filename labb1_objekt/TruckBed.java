@@ -1,3 +1,4 @@
+package labb1_objekt;
 public class TruckBed {
 
     protected int angle;
