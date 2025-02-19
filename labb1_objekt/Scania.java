@@ -20,7 +20,12 @@ public class Scania extends Truck{
         this.y = i1;
         }
 
-
+    @Override
+    public void gas(double amount){
+        if(getAngle() == 0){
+            super.gas(amount);
+        }
+    }
 }
 
 

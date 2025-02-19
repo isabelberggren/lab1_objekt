@@ -3,9 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Garage<T extends Vehicle> {
-    private int maxNmr;
+    private int maxNmr = 10;
     private List<T> loadedVehicles = new ArrayList<T>();      //bilar i garaget
-
     public void setMaxNmr(int max) {
         maxNmr = max;
     }
@@ -24,6 +23,10 @@ public class Garage<T extends Vehicle> {
     }
 
     public int getGarageLoaded(){return loadedVehicles.size();}
+
+    public boolean isLoaded(Vehicle car){
+        return loadedVehicles.contains(car);
+    }
 
     public T deloadVehicle (int index) {
         T delodedVechical = null;
