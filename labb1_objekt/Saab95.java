@@ -6,7 +6,7 @@ public class Saab95 extends Vehicle implements PersonalCar{
     private boolean turboOn;
 
     
-    public Saab95(){
+    public Saab95(int i, int i1){
         nrDoors = 2;
         color = Color.red;
         enginePower = 125;
@@ -14,8 +14,15 @@ public class Saab95 extends Vehicle implements PersonalCar{
         modelName = "Saab95";
         size = 4.30;
         stopEngine();
+        this.x = i;
+        this.y = i1;
 
     }
+
+
+
+
+
     public void setTurboOn(){
         turboOn = true;
     }
@@ -31,7 +38,7 @@ public class Saab95 extends Vehicle implements PersonalCar{
 
     @Override
     public void setY(double yCoord) {
-        super.sety(yCoord);
+        super.setY(yCoord);
     }
 
     @Override
@@ -49,7 +56,7 @@ public class Saab95 extends Vehicle implements PersonalCar{
     @Override
     protected double speedFactor(){
         double turbo = 1;
-        if(turboOn) turbo = 10.3;
+        if(turboOn) turbo = 11.3;
         return enginePower * 0.01 * turbo;
     }
 

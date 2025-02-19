@@ -5,7 +5,7 @@ public class Scania extends Truck{
 
     private TruckBed bed;
 
-    public Scania(){
+    public Scania(int i, int i1){
         super(new TruckBed());
 
         nrDoors = 2;
@@ -16,7 +16,10 @@ public class Scania extends Truck{
         bed.setAngle(0, getCurrentSpeed());
         size = 10;
         stopEngine();
+        this.x = i;
+        this.y = i1;
         }
+
 
 }
 

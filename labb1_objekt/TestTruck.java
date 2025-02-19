@@ -1,4 +1,4 @@
-/*package labb1_objekt;
+package labb1_objekt;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -7,7 +7,7 @@ public class TestTruck {
 
     @Test
     public void testEngineAngleWhenAngleEqualsZero() {
-        Scania truck = new Scania();
+        Scania truck = new Scania(0,0);
         for (int i = 0; i < 71; i++) {
             if (i == 0) {
                 truck.raise(i);
@@ -24,17 +24,17 @@ public class TestTruck {
     }
 
     @Test
-    public void testDeloadCar(){
+    public void testDeloadCar() {
         transportCar<Volvo240> truck = new transportCar<>();
-        truck.loadCar(new Volvo240());
+        truck.loadCar(new Volvo240(0,0));
         truck.raise(0);
         truck.setCurrentspeed(0);
         truck.carDistance = 1;
         truck.deloadCar();
         assertEquals(0, truck.getLoaded());
 
-    }*/
-
+    }
+}
     //@Test
   //  public void testGarage() {
     //    Garage<Vehicle> g = new Garage<>();

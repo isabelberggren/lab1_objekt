@@ -6,13 +6,15 @@ public class Volvo240 extends Vehicle implements PersonalCar{
     private final static double trimFactor = 1.25;
 
     
-    public Volvo240(){
+    public Volvo240(int i, int i1){
         nrDoors = 4;
         color = Color.black;
         enginePower = 100;
         modelName = "Volvo240";
         stopEngine();
         size = 4.87;
+        this.x = i;
+        this.y = i1;
     }
 
     @Override
@@ -27,12 +29,17 @@ public class Volvo240 extends Vehicle implements PersonalCar{
 
     @Override
     public void setY(double yCoord) {
-        super.sety(yCoord);
+        super.setY(yCoord);
     }
 
     @Override
     public double getX() {
-        return super.getX();
+        return super.x;
+    }
+
+    @Override
+    public double getY() {
+        return super.y;
     }
 
 }
