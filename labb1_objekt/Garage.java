@@ -19,20 +19,18 @@ public class Garage<T extends Vehicle> {
 
         } else {
             loadedVehicles.add(car);
+            car.setIsLoaded(true);
+
         }
     }
-
     public int getGarageLoaded(){return loadedVehicles.size();}
-
-    public boolean isLoaded(Vehicle car){
-        return loadedVehicles.contains(car);
-    }
 
     public T deloadVehicle (int index) {
         T delodedVechical = null;
         if(index != 0 && index < loadedVehicles.size()){
             delodedVechical = loadedVehicles.get(index);
             loadedVehicles.remove(index);
+           // delodedVechical.setLoaded(false);
             return delodedVechical;
         }
 

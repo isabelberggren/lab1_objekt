@@ -10,7 +10,7 @@ public class Scania extends Truck{
 
         nrDoors = 2;
         color = Color.orange;
-        enginePower = 1500;
+        enginePower = 200;
         modelName = "Scania";
         bed = new TruckBed();
         bed.setAngle(0, getCurrentSpeed());

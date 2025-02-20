@@ -5,7 +5,6 @@ public class TruckBed {
     protected int getAngle(){return angle;}
 
     public void setAngle(int ang, double speed) {
-        //double speed = T.getCurrentSpeed();
         if (speed == 0) {
             if (angle >= 0 && 70 >= angle) {
                 angle = ang;

@@ -10,8 +10,8 @@ public abstract class Vehicle implements Movable {
     protected double x;
     protected double y; // Ändra sen om det ska från pub
     protected double currDirection = 0;
-    protected static double size;
-
+    protected double size;
+    private boolean isLoaded = false;
     public void setCurrentspeed(double speed){currentSpeed = speed;
     }
     public double getSize(){return size;}
@@ -25,6 +25,8 @@ public abstract class Vehicle implements Movable {
     public double getEnginePower(){
         return enginePower;
     }
+    public boolean getIsLoaded(){return isLoaded;}
+    public void setIsLoaded(boolean idk){isLoaded = idk;}
 
     public double getCurrentSpeed(){
         return currentSpeed;
@@ -38,7 +40,7 @@ public abstract class Vehicle implements Movable {
         color = clr;
     }
 
-    public void startEngine(){if (this.car.isLoaded()currentSpeed = 0.1;
+    public void startEngine(){currentSpeed = 0.1;
     }
 
     public void stopEngine(){

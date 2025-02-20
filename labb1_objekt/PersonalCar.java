@@ -8,7 +8,5 @@ public interface PersonalCar{
     double getY();
     void setY(double y);
     void setX(double x);
-    /*void setColor(Color clr);
-    void startEngine();
-    void stopEngine();*/
+
 }
